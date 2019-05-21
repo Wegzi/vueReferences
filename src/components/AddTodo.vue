@@ -1,25 +1,19 @@
 <template lang="html">
-  <v-layout >
-    <v-flex offset-sm3>
-      <v-container pb-0 mb-0 grid-list-lg fluid>
+  <div>
+    <form>
       <h3>Add Todo</h3>
-        <v-layout>
-            <form>
-              <v-container>
-                <v-layout>
-                  <v-flex xs12 md8>
-                    <v-text-field v-model="title" label="Title"></v-text-field>
-                  </v-flex>
-                  <v-flex xs12 md4 >
-                    <v-btn @click="onSubmit">submit</v-btn>
-                  </v-flex>
-                </v-layout>
-              </v-container>
-            </form>
+      <v-container grid-list-md mx-0 px-0>
+        <v-layout row wrap>
+          <v-flex>
+            <v-text-field v-model="title" label="Title"></v-text-field>
+          </v-flex>
+          <v-flex xs2  >
+            <v-btn @click="onSubmit">submit</v-btn>
+          </v-flex>
         </v-layout>
       </v-container>
-    </v-flex>
-  </v-layout>
+    </form>
+  </div>
 </template>
 
 <script>

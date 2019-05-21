@@ -26,9 +26,7 @@ const actions = {
     commit('removeTodo', id);
   },
   async filterTodos({ commit }, e) {
-    const limit = parseInt(
-      e.target.options[e.target.options.selectedIndex].innerText
-    )
+    const limit = e
     const response = await axios.get(
       `https://jsonplaceholder.typicode.com/todos/?_limit=${limit}`
     )

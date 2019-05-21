@@ -1,7 +1,15 @@
 <template>
   <v-app>
-    <AddTodo />
-    <FilterTodos />
+    <v-container grid-list-md fluid>
+      <v-layout row wrap>
+        <v-flex xs4 offset-sm3>
+          <AddTodo />
+        </v-flex>
+        <v-flex xs2>
+          <FilterTodos />
+        </v-flex>
+      </v-layout>
+    </v-container>
     <Todos/>
   </v-app>
 </template>

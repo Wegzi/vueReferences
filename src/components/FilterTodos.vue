@@ -1,29 +1,24 @@
 <template lang="html">
-  <v-layout>
-    <v-flex offset-sm3>
-      <v-container  pt-0 mt-0 grid-list-lg fluid>
+  <v-container grid-list-md>
+    <v-layout row wrap>
+      <v-flex offset-sm3>
         <h3>Filter</h3>
-        <v-layout row wrap>
-          <v-flex xs3 md3 >
-            <v-select @change="filterTodos($event)">
-              <option value="200">200</option>
-              <option value="100">100</option>
-              <option value="50">50</option>
-              <option value="20">20</option>
-              <option value="10">10</option>
-              <option value="5">5</option>
-            </v-select>
-          </v-flex>
-        </v-layout>
-      </v-container>
-    </v-flex>
-  </v-layout>
+        <v-select :items="items" @change="filterTodos($event)">
+        </v-select>
+      </v-flex>
+    </v-layout>
+  </v-container>
 </template>
 
 <script>
 import { mapActions } from 'vuex'
 export default {
   name: "FilterTodos",
+  data(){
+    return{
+      items: [200, 100, 50, 20, 10, 5]
+    }
+  },
   methods: mapActions(["filterTodos"])
 }
 </script>
